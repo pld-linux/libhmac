@@ -2,7 +2,7 @@ Summary:	Library to support various Hash-based Message Authentication Codes (HMA
 Summary(pl.UTF-8):	Biblioteka obsługująca różne kody uwierzytelniające oparte na skrótach (HMAC)
 Name:		libhmac
 Version:	20150104
-Release:	1
+Release:	2
 License:	LGPL v3+
 Group:		Libraries
 Source0:	https://github.com/libyal/libhmac/archive/%{version}/%{name}-%{version}.tar.gz
