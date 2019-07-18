@@ -1,39 +1,42 @@
+# see m4/${libname}.m4 />= for required version of particular library
+%define		libcerror_ver	20120425
+%define		libcfile_ver	20160409
+%define		libclocale_ver	20120425
+%define		libcnotify_ver	20120425
+%define		libcpath_ver	20180716
+%define		libcsplit_ver	20120701
+%define		libuna_ver	20120425
 Summary:	Library to support various Hash-based Message Authentication Codes (HMAC)
 Summary(pl.UTF-8):	Biblioteka obsługująca różne kody uwierzytelniające oparte na skrótach (HMAC)
 Name:		libhmac
-Version:	20150104
-Release:	3
+Version:	20180731
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	https://github.com/libyal/libhmac/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	884a976f30e374cbdd5ab528d90adca0
-Patch0:		%{name}-system-libs.patch
+#Source0Download: https://github.com/libyal/libhmac/releases
+Source0:	https://github.com/libyal/libhmac/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
+# Source0-md5:	bd7704e38dd44e38aee170dbd8ecc8b4
 URL:		https://github.com/libyal/libhmac/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
-BuildRequires:	libcerror-devel >= 20120425
-BuildRequires:	libcfile-devel >= 20140503
-BuildRequires:	libclocale-devel >= 20120425
-BuildRequires:	libcnotify-devel >= 20120425
-BuildRequires:	libcpath-devel >= 20120701
-BuildRequires:	libcsplit-devel >= 20120701
-BuildRequires:	libcstring-devel >= 20120425
-BuildRequires:	libcsystem-devel >= 20141018
-BuildRequires:	libuna-devel >= 20120425
+BuildRequires:	libcerror-devel >= %{libcerror_ver}
+BuildRequires:	libcfile-devel >= %{libcfile_ver}
+BuildRequires:	libclocale-devel >= %{libclocale_ver}
+BuildRequires:	libcnotify-devel >= %{libcnotify_ver}
+BuildRequires:	libcpath-devel >= %{libcpath_ver}
+BuildRequires:	libcsplit-devel >= %{libcsplit_ver}
+BuildRequires:	libuna-devel >= %{libuna_ver}
 BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 1.0
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
-Requires:	libcerror >= 20120425
-Requires:	libcfile >= 20140503
-Requires:	libclocale >= 20120425
-Requires:	libcnotify >= 20120425
-Requires:	libcpath >= 20120701
-Requires:	libcsplit >= 20120701
-Requires:	libcstring >= 20120425
-Requires:	libcsystem >= 20141018
-Requires:	libuna >= 20120425
+Requires:	libcerror >= %{libcerror_ver}
+Requires:	libcfile >= %{libcfile_ver}
+Requires:	libclocale >= %{libclocale_ver}
+Requires:	libcnotify >= %{libcnotify_ver}
+Requires:	libcpath >= %{libcpath_ver}
+Requires:	libcsplit >= %{libcsplit_ver}
+Requires:	libuna >= %{libuna_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,8 +52,7 @@ Summary:	Header files for libhmac library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libhmac
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcerror-devel >= 20120425
-Requires:	libcstring-devel >= 20120425
+Requires:	libcerror-devel >= %{libcerror_ver}
 Requires:	openssl-devel >= 1.0
 
 %description devel
@@ -73,11 +75,9 @@ Statyczna biblioteka libhmac.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gettextize}
-%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
