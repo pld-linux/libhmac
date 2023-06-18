@@ -5,29 +5,31 @@
 %define		libcnotify_ver	20120425
 %define		libcpath_ver	20180716
 %define		libcsplit_ver	20120701
-%define		libuna_ver	20120425
+%define		libcthreads_ver	20160404
+%define		libuna_ver	20210801
 Summary:	Library to support various Hash-based Message Authentication Codes (HMAC)
 Summary(pl.UTF-8):	Biblioteka obsługująca różne kody uwierzytelniające oparte na skrótach (HMAC)
 Name:		libhmac
-Version:	20180731
-Release:	2
+Version:	20230407
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libhmac/releases
 Source0:	https://github.com/libyal/libhmac/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	bd7704e38dd44e38aee170dbd8ecc8b4
+# Source0-md5:	191ee1908cf3159ce0666897ec4e8f8d
 URL:		https://github.com/libyal/libhmac/
-BuildRequires:	autoconf >= 2.59
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
-BuildRequires:	gettext-tools >= 0.18.1
+BuildRequires:	gettext-tools >= 0.21
 BuildRequires:	libcerror-devel >= %{libcerror_ver}
 BuildRequires:	libcfile-devel >= %{libcfile_ver}
 BuildRequires:	libclocale-devel >= %{libclocale_ver}
 BuildRequires:	libcnotify-devel >= %{libcnotify_ver}
 BuildRequires:	libcpath-devel >= %{libcpath_ver}
 BuildRequires:	libcsplit-devel >= %{libcsplit_ver}
+BuildRequires:	libcthreads-devel >= %{libcthreads_ver}
 BuildRequires:	libuna-devel >= %{libuna_ver}
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	openssl-devel >= 1.0
 BuildRequires:	pkgconfig
 Requires:	libcerror >= %{libcerror_ver}
@@ -36,6 +38,7 @@ Requires:	libclocale >= %{libclocale_ver}
 Requires:	libcnotify >= %{libcnotify_ver}
 Requires:	libcpath >= %{libcpath_ver}
 Requires:	libcsplit >= %{libcsplit_ver}
+Requires:	libcthreads >= %{libcthreads_ver}
 Requires:	libuna >= %{libuna_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
