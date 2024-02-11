@@ -6,17 +6,17 @@
 %define		libcpath_ver	20180716
 %define		libcsplit_ver	20120701
 %define		libcthreads_ver	20160404
-%define		libuna_ver	20210801
+%define		libuna_ver	20230702
 Summary:	Library to support various Hash-based Message Authentication Codes (HMAC)
 Summary(pl.UTF-8):	Biblioteka obsługująca różne kody uwierzytelniające oparte na skrótach (HMAC)
 Name:		libhmac
-Version:	20230407
+Version:	20240129
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libhmac/releases
 Source0:	https://github.com/libyal/libhmac/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	191ee1908cf3159ce0666897ec4e8f8d
+# Source0-md5:	d5f317f63c0c60c51dca52ebb71a20a1
 URL:		https://github.com/libyal/libhmac/
 BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
